@@ -125,7 +125,7 @@ gmatch :: proc(src, pattern: string, allocator := context.allocator) -> (proc() 
 			return data.captures[0], true
 		}
 
-		found, s, e, captures, err := find(data.src[data.start:], data.pattern, data.allocator)
+		found, _, e, captures, err := find(data.src[data.start:], data.pattern, data.allocator)
 		if err != nil {
 			log.error(err)
 			if data.captures != nil {
